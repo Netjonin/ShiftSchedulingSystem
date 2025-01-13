@@ -1,4 +1,11 @@
+using NLog;
+using ShiftSchedulingSystem.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
+
+LogManager.Setup().LoadConfigurationFromFile(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
+
+builder.Services.AddComponents(builder.Configuration);
 
 // Add services to the container.
 
