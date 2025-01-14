@@ -1,4 +1,5 @@
 using NLog;
+using Repository.Seeds;
 using ShiftSchedulingSystem.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,12 @@ builder.Services.AddControllers();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    SeedData.Initialize(services);
+}
 
 app.UseHttpsRedirection();
 

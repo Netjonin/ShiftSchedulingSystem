@@ -11,11 +11,11 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("dbec77f8-9702-4a74-88b5-25a0c5fe8829")]
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("4adb89a5-b986-457b-8e52-ed04e4fba35b")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShiftSchedulingSystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8150f1796ed4c8309c61096b1618e7aa7bcca1f9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed6763c9f38c118c33f956fbeebf2ad8377451df")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShiftSchedulingSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShiftSchedulingSystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
