@@ -18,3 +18,5 @@ C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\Repository\
 C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\Repository\obj\Debug\net8.0\Repository.pdb
 C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\Repository\obj\Debug\net8.0\Repository.genruntimeconfig.cache
 C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\Repository\obj\Debug\net8.0\ref\Repository.dll
+C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\Repository\bin\Debug\net8.0\Shared.dll
+C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\Repository\bin\Debug\net8.0\Shared.pdb

@@ -14,3 +14,7 @@ C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\LoggerServi
 C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\LoggerService\obj\Debug\net8.0\refint\LoggerService.dll
 C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\LoggerService\obj\Debug\net8.0\LoggerService.pdb
 C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\LoggerService\obj\Debug\net8.0\ref\LoggerService.dll
+C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\LoggerService\bin\Debug\net8.0\Entities.dll
+C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\LoggerService\bin\Debug\net8.0\Shared.dll
+C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\LoggerService\bin\Debug\net8.0\Entities.pdb
+C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\LoggerService\bin\Debug\net8.0\Shared.pdb
