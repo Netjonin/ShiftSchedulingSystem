@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Contracts;
+using Entities.Exceptions;
 using Entities.Models;
 using Service.Contracts;
 using Shared.DataTransferObjects;
@@ -60,7 +61,8 @@ public sealed class WorkerService : IWorkerService
     {
         var worker = await _repository.Worker.GetWorkerAsync(id, trackChanges);
 
-        
+        if (worker is null)
+            throw new WorkerNotFoundException(id);
         return worker;
     }
 }

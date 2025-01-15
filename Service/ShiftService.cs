@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Contracts;
+using Entities.Exceptions;
 using Entities.Models;
 using Service.Contracts;
 using Shared.DataTransferObjects;
@@ -26,7 +27,7 @@ public sealed class ShiftService : IShiftService
 
         var shiftforVal = await _repository.Shift.GetShiftsForValidation(workerId, trackChanges);
         var isExisting = shiftforVal.Any(s => s.Date.Equals(shiftForCreationDto.Date));
-        
+        if (isExisting) throw new ConflictException("The shift is already existing for the day");
 
         var shift = _mapper.Map<Shift>(shiftForCreationDto);
         _repository.Shift.CreateShiftForWorker(workerId, shift);
@@ -75,13 +76,15 @@ public sealed class ShiftService : IShiftService
     private async Task CheckIfWorkerExists(Guid workerId, bool trackChanges)
     {
         var worker = await _repository.Worker.GetWorkerAsync(workerId, trackChanges);
-        
+        if (worker is null)
+            throw new WorkerNotFoundException(workerId);
     }
     private async Task<Shift> GetShiftForWorkerAndCheckIfItExists(Guid workerId, Guid id, bool trackChanges)
     {
         var shift = await _repository.Shift.GetShiftAsync(workerId, id, trackChanges);
 
-        
+        if (shift is null)
+            throw new ShiftNotFoundException(id);
         return shift;
     }
 }
