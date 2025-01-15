@@ -2,6 +2,8 @@
 using LoggerService;
 using Microsoft.EntityFrameworkCore;
 using Repository;
+using Service;
+using Service.Contracts;
 
 namespace ShiftSchedulingSystem.Extensions;
 
@@ -28,5 +30,7 @@ public static class ServiceExtensions
 
         services.AddDbContext<ApplicationContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"), options => options.EnableRetryOnFailure()));
+
+        services.AddScoped<IServiceManager, ServiceManager>();
     }
 }
