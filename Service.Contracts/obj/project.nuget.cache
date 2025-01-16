@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7gpAb0Ju4yg=",
+  "dgSpecHash": "P53NLb9gN9s=",
   "success": true,
   "projectFilePath": "C:\\Users\\taofeekaj\\source\\repos\\csharpprojects\\ShiftSchedulingSystem\\Service.Contracts\\Service.Contracts.csproj",
   "expectedPackageFiles": [
@@ -23,18 +23,5 @@
     "C:\\Users\\taofeekaj\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
     "C:\\Users\\taofeekaj\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
-    },
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://gitlab.com/api/v4/projects/43998283/packages/nuget/index.json."
-    }
-  ]
+  "logs": []
 }

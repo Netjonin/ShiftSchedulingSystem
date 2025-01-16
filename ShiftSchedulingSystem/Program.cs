@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 LogManager.Setup().LoadConfigurationFromFile(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 
+builder.Services.AddAuthentication();
 builder.Services.AddComponents(builder.Configuration);
 
 // Add services to the container.
@@ -22,10 +23,12 @@ using (var scope = app.Services.CreateScope())
     SeedData.Initialize(services);
 }
 
+
 app.UseHttpsRedirection();
 
 app.UseCors("CorsPolicy");
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
