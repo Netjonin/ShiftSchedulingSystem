@@ -15,8 +15,14 @@ builder.Services.AddComponents(builder.Configuration);
 builder.Services.AddControllers();
 
 var app = builder.Build();
+
+app.UseSwagger();
+app.UseSwaggerUI(s =>
+{
+    s.SwaggerEndpoint("/swagger/v1/swagger.json", "Shift Scheduling System");
+});
+
 app.UseExceptionHandler(opt => { });
-// Configure the HTTP request pipeline.
 
 using (var scope = app.Services.CreateScope())
 {
@@ -26,6 +32,8 @@ using (var scope = app.Services.CreateScope())
 
 if (app.Environment.IsProduction())
     app.UseHsts();
+
+// Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
 
