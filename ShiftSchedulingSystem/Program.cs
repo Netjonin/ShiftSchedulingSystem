@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.HttpOverrides;
 using NLog;
 using Repository.Seeds;
 using ShiftSchedulingSystem.Extensions;
@@ -14,7 +15,7 @@ builder.Services.AddComponents(builder.Configuration);
 builder.Services.AddControllers();
 
 var app = builder.Build();
-
+app.UseExceptionHandler(opt => { });
 // Configure the HTTP request pipeline.
 
 using (var scope = app.Services.CreateScope())
@@ -23,10 +24,21 @@ using (var scope = app.Services.CreateScope())
     SeedData.Initialize(services);
 }
 
+if (app.Environment.IsProduction())
+    app.UseHsts();
 
 app.UseHttpsRedirection();
 
+app.UseStaticFiles();
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.All
+});
+
+app.UseRateLimiter();
 app.UseCors("CorsPolicy");
+app.UseResponseCaching();
+//app.UseOutputCache();
 
 app.UseAuthentication();
 app.UseAuthorization();
