@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Entities.Models;
+using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
 using Shared.DataTransferObjects;
 using ShiftSchedulingSystem.Presentation.ActionFilters;
+using ShiftSchedulingSystem.Presentation.Validations;
 
 namespace ShiftSchedulingSystem.Presentation.Controllers;
 
@@ -16,6 +18,11 @@ public class AuthenticationController : ControllerBase
     [ServiceFilter(typeof(ValidationFilterAttribute))]
     public async Task<IActionResult> RegisterUser([FromBody] UserForRegistrationDto userForRegistration)
     {
+        var validator = new UserRegistrationValidator();
+        var validationResult = await validator.ValidateAsync(userForRegistration);
+        if (!validationResult.IsValid)
+            return UnprocessableEntity(validationResult.Errors.Select(x => x.ErrorMessage));
+
         var result = await _service.AuthenticationService.RegisterUser(userForRegistration);
         if (!result.Succeeded)
         {
@@ -29,9 +36,11 @@ public class AuthenticationController : ControllerBase
     }
 
     [HttpPost("login")]
-    [ServiceFilter(typeof(ValidationFilterAttribute))]
+    //[ServiceFilter(typeof(ValidationFilterAttribute))]
     public async Task<IActionResult> Authenticate([FromBody] UserForAuthenticationDto user)
     {
+        
+
         if (!await _service.AuthenticationService.ValidateUser(user))
             return Unauthorized();
         return Ok(new

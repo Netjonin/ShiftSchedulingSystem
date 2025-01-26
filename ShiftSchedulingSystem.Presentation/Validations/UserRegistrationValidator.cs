@@ -8,7 +8,7 @@ public class UserRegistrationValidator : AbstractValidator<UserForRegistrationDt
 {
     public UserRegistrationValidator()
     {
-        RuleFor(x => x.FirstName).NotNull().WithMessage("{PropertyName} is required");
-        RuleFor(x => x.LastName).NotNull().WithMessage("{PropertyName} is required");
+        RuleFor(x => x.FirstName).NotEmpty().WithMessage("{PropertyName} is required");
+        RuleFor(x => x.LastName).NotEmpty().WithMessage("{PropertyName} is required");
     }
 }
