@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Entities.Models;
+using FluentValidation;
+using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
 using Shared.DataTransferObjects;
 using Shared.RequestFeatures;
 using ShiftSchedulingSystem.Presentation.ActionFilters;
+using ShiftSchedulingSystem.Presentation.Validations;
 using System.Text.Json;
 
 namespace ShiftSchedulingSystem.Presentation.Controllers;
@@ -39,9 +42,14 @@ public class ShiftsController : ControllerBase
     }
 
     [HttpPost("{workerid}/shifts")]
-    [ServiceFilter(typeof(ValidationFilterAttribute))]
+    //[ServiceFilter(typeof(ValidationFilterAttribute))]
     public async Task<IActionResult> CreateShiftForWorker(Guid workerId, [FromBody] ShiftForCreationDto shift)
     {
+        var validator = new ShiftForCreationValidator();
+        var validationResult = await validator.ValidateAsync(shift);
+        if (!validationResult.IsValid)
+            return UnprocessableEntity(validationResult.Errors.Select(x => x.ErrorMessage));
+
         var shiftToReturn =
         await _service.ShiftService.CreateShiftAsync(workerId, shift, trackChanges: false);
         return CreatedAtRoute("GetShiftsForWorker", new { workerId, id = shiftToReturn.Id }, shiftToReturn);
@@ -55,9 +63,14 @@ public class ShiftsController : ControllerBase
     }
 
     [HttpPut("{workerid}/shifts/{id:guid}")]
-    [ServiceFilter(typeof(ValidationFilterAttribute))]
+    //[ServiceFilter(typeof(ValidationFilterAttribute))]
     public async Task<IActionResult> UpdateShiftForWorker(Guid workerId, Guid id, [FromBody] ShiftForUpdateDto shift)
     {
+        var validator = new ShiftForUpdateValidator();
+        var validationResult = await validator.ValidateAsync(shift);
+        if (!validationResult.IsValid)
+            return UnprocessableEntity(validationResult.Errors.Select(x => x.ErrorMessage));
+
         await _service.ShiftService.UpdateShiftAsync(workerId, id, shift,
         workerTrackChanges: false, shiftTrackChanges: true);
         return NoContent();
