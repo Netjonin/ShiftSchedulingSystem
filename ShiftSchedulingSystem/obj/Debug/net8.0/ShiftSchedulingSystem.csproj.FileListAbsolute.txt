@@ -182,3 +182,7 @@ C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\ShiftSchedu
 C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\ShiftSchedulingSystem\bin\Debug\net8.0\ShiftSchedulingSystem.Presentation.pdb
 C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\ShiftSchedulingSystem\bin\Debug\net8.0\Service.Contracts.pdb
 C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\ShiftSchedulingSystem\obj\Debug\net8.0\ShiftSchedulingSystem.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\ShiftSchedulingSystem\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\ShiftSchedulingSystem\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\ShiftSchedulingSystem\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\taofeekaj\source\repos\csharpprojects\ShiftSchedulingSystem\ShiftSchedulingSystem\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll

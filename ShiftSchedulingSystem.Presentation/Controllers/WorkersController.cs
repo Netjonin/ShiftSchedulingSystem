@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
 using Shared.DataTransferObjects;
 using Shared.RequestFeatures;
 using ShiftSchedulingSystem.Presentation.ActionFilters;
+using ShiftSchedulingSystem.Presentation.Validations;
 using System.Text.Json;
 
 namespace ShiftSchedulingSystem.Presentation.Controllers;
@@ -49,9 +51,14 @@ public class WorkersController : ControllerBase
     }
 
     [HttpPost]
-    [ServiceFilter(typeof(ValidationFilterAttribute))]
+    //[ServiceFilter(typeof(ValidationFilterAttribute))]
     public async Task<IActionResult> CreateWorker([FromBody] WorkerForCreationDto worker)
     {
+        var validator = new WorkerForCreationValidator();
+        var validationResult = await validator.ValidateAsync(worker);
+        if (!validationResult.IsValid)
+            return UnprocessableEntity(validationResult.Errors.Select(x => x.ErrorMessage));
+
         var createdWorker = await _service.WorkerService.CreateWorkerAsync(worker);
         return CreatedAtRoute("WorkerById", new { id = createdWorker.Id },
         createdWorker);
@@ -65,9 +72,14 @@ public class WorkersController : ControllerBase
     }
 
     [HttpPut("{id:guid}")]
-    [ServiceFilter(typeof(ValidationFilterAttribute))]
+    //[ServiceFilter(typeof(ValidationFilterAttribute))]
     public async Task<IActionResult> UpdateWorker(Guid id, [FromBody] WorkerForUpdateDto worker)
     {
+        var validator = new WorkerForUpdateValidator();
+        var validationResult = await validator.ValidateAsync(worker);
+        if (!validationResult.IsValid)
+            return UnprocessableEntity(validationResult.Errors.Select(x => x.ErrorMessage));
+
         await _service.WorkerService.UpdateWorkerAsync(id, worker, trackChanges: true);
         return NoContent();
     }

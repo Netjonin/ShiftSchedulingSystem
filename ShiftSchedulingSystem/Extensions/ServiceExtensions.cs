@@ -58,9 +58,9 @@ public static class ServiceExtensions
                 Duration = 120
             });
 
-
         }).AddXmlDataContractSerializerFormatters()
             .AddApplicationPart(typeof(ShiftSchedulingSystem.Presentation.AssemblyReference).Assembly);
+            
         //services.AddOutputCache(opt =>
         //{
         //    //opt.AddBasePolicy(bp => bp.Expire(TimeSpan.FromSeconds(10)));
