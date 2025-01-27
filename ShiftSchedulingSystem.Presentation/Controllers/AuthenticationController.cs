@@ -15,7 +15,7 @@ public class AuthenticationController : ControllerBase
     public AuthenticationController(IServiceManager service) => _service = service;
 
     [HttpPost]
-    [ServiceFilter(typeof(ValidationFilterAttribute))]
+    //[ServiceFilter(typeof(ValidationFilterAttribute))]
     public async Task<IActionResult> RegisterUser([FromBody] UserForRegistrationDto userForRegistration)
     {
         var validator = new UserRegistrationValidator();
@@ -36,10 +36,13 @@ public class AuthenticationController : ControllerBase
     }
 
     [HttpPost("login")]
-    //[ServiceFilter(typeof(ValidationFilterAttribute))]
+    [ServiceFilter(typeof(ValidationFilterAttribute))]
     public async Task<IActionResult> Authenticate([FromBody] UserForAuthenticationDto user)
     {
-        
+        var validator = new UserLoginValidator();
+        var validationResult = await validator.ValidateAsync(user);
+        if (!validationResult.IsValid)
+            return UnprocessableEntity(validationResult.Errors.Select(x => x.ErrorMessage));
 
         if (!await _service.AuthenticationService.ValidateUser(user))
             return Unauthorized();

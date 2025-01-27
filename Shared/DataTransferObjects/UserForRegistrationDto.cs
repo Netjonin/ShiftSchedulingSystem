@@ -1,6 +1,4 @@
-﻿
-
-namespace Shared.DataTransferObjects;
+﻿namespace Shared.DataTransferObjects;
 public record UserForRegistrationDto
 {
     public string? FirstName { get; init; }
