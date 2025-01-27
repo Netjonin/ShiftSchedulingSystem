@@ -8,7 +8,7 @@ using Service;
 using Shared.DataTransferObjects;
 using Xunit;
 
-namespace ShiftSchedulingSystem.Tests.WorkTests;
+namespace ShiftSchedulingSystem.Tests.ShiftTests;
 public class CreateShiftTest
 {
     #region Properties
