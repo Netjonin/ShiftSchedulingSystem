@@ -14,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace ShiftSchedulingSystem.Tests
+namespace ShiftSchedulingSystem.Tests.WorkTests
 {
     public class GetShiftsTest
     {
