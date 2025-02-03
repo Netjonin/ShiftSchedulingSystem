@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "d61wA1UHGuk=",
+  "dgSpecHash": "vGvUo/BMkkM=",
   "success": true,
   "projectFilePath": "C:\\Users\\taofeekaj\\source\\repos\\csharpprojects\\ShiftSchedulingSystem\\Repository\\Repository.csproj",
   "expectedPackageFiles": [
@@ -68,7 +68,7 @@
     "C:\\Users\\taofeekaj\\.nuget\\packages\\system.formats.asn1\\8.0.1\\system.formats.asn1.8.0.1.nupkg.sha512",
     "C:\\Users\\taofeekaj\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.35.0\\system.identitymodel.tokens.jwt.6.35.0.nupkg.sha512",
     "C:\\Users\\taofeekaj\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
-    "C:\\Users\\taofeekaj\\.nuget\\packages\\system.linq.dynamic.core\\1.5.1\\system.linq.dynamic.core.1.5.1.nupkg.sha512",
+    "C:\\Users\\taofeekaj\\.nuget\\packages\\system.linq.dynamic.core\\1.6.0.1\\system.linq.dynamic.core.1.6.0.1.nupkg.sha512",
     "C:\\Users\\taofeekaj\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\taofeekaj\\.nuget\\packages\\system.memory.data\\1.0.2\\system.memory.data.1.0.2.nupkg.sha512",
     "C:\\Users\\taofeekaj\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
@@ -89,16 +89,5 @@
     "C:\\Users\\taofeekaj\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\taofeekaj\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Linq.Dynamic.Core' 1.5.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-4cv2-4hjh-77rx",
-      "libraryId": "System.Linq.Dynamic.Core",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }

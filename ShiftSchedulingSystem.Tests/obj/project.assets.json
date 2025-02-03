@@ -1639,7 +1639,7 @@
           "Entities": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.11",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.11",
-          "System.Linq.Dynamic.Core": "1.5.1"
+          "System.Linq.Dynamic.Core": "1.6.0.1"
         },
         "compile": {
           "bin/placeholder/Repository.dll": {}
@@ -4159,5 +4159,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Detected package downgrade: System.Linq.Dynamic.Core from 1.6.0.1 to 1.6.0. Reference the package directly from the project to select a different version. \r\n ShiftSchedulingSystem.Tests -> Repository -> System.Linq.Dynamic.Core (>= 1.6.0.1) \r\n ShiftSchedulingSystem.Tests -> System.Linq.Dynamic.Core (>= 1.6.0)",
+      "libraryId": "System.Linq.Dynamic.Core",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShiftSchedulingSystem.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c38a3b59ef1f948388bba336c1fc115ca1ea9df")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b8ee8b89bc3c6036924269a154c9c9f97bbb5985")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShiftSchedulingSystem.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShiftSchedulingSystem.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1857,7 +1857,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "System.Linq.Dynamic.Core/1.5.1": {
+      "System.Linq.Dynamic.Core/1.6.0.1": {
         "type": "package",
         "compile": {
           "lib/net8.0/System.Linq.Dynamic.Core.dll": {
@@ -2232,7 +2232,7 @@
           "Entities": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.11",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.11",
-          "System.Linq.Dynamic.Core": "1.5.1"
+          "System.Linq.Dynamic.Core": "1.6.0.1"
         },
         "compile": {
           "bin/placeholder/Repository.dll": {}
@@ -4943,10 +4943,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Linq.Dynamic.Core/1.5.1": {
-      "sha512": "Uj3xYJHWFs1zXjTrTrPAB3KEPtUirYwFjCmYO+cqcNC/TM0GMjbHtvQYwSr8T3zv/BihVvcpiTOpzn/naVii4g==",
+    "System.Linq.Dynamic.Core/1.6.0.1": {
+      "sha512": "u1ome4HL3OS5lq2QbxIAmHv+i5uewSf2hqosGr8O5FjkseqSx4Fmt1Pn+8fjyex7/rQOOYrXk+iTkxxEgSc9yA==",
       "type": "package",
-      "path": "system.linq.dynamic.core/1.5.1",
+      "path": "system.linq.dynamic.core/1.6.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5001,7 +5001,7 @@
         "lib/uap10.0.10240/System.Linq.Dynamic.Core.pri",
         "lib/uap10.0.10240/System.Linq.Dynamic.Core.xml",
         "logo.png",
-        "system.linq.dynamic.core.1.5.1.nupkg.sha512",
+        "system.linq.dynamic.core.1.6.0.1.nupkg.sha512",
         "system.linq.dynamic.core.nuspec"
       ]
     },
@@ -5622,7 +5622,8 @@
       "Repository >= 1.0.0",
       "Service >= 1.0.0",
       "ShiftSchedulingSystem.Presentation >= 1.0.0",
-      "Swashbuckle.AspNetCore >= 7.2.0"
+      "Swashbuckle.AspNetCore >= 7.2.0",
+      "System.Linq.Dynamic.Core >= 1.6.0.1"
     ]
   },
   "packageFolders": {
@@ -5703,6 +5704,10 @@
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[7.2.0, )"
+          },
+          "System.Linq.Dynamic.Core": {
+            "target": "Package",
+            "version": "[1.6.0.1, )"
           }
         },
         "imports": [
